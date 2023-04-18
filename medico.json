@@ -1,0 +1,10 @@
+[ {
+  "crm" : "123",
+  "nome" : "Jose",
+  "ativo" : true,
+  "esp" : {
+    "id" : 1,
+    "especialidade" : "cardio",
+    "ativo" : true
+  }
+} ]

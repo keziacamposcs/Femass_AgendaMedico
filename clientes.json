@@ -1,0 +1,49 @@
+[ {
+  "id" : 25,
+  "cpf" : "54743495059",
+  "nome" : "Yure",
+  "endereco" : "Rua Y",
+  "telefones" : [ "8888" ],
+  "email" : "yure@yure",
+  "ativo" : true
+}, {
+  "id" : 24,
+  "cpf" : "16098598045",
+  "nome" : "Roberta",
+  "endereco" : "Rua R",
+  "telefones" : [ "8585757" ],
+  "email" : "roberto@roberto",
+  "ativo" : false
+}, {
+  "id" : 1,
+  "cpf" : "67878321841",
+  "nome" : "Maria",
+  "endereco" : "Rua Maria",
+  "telefones" : [ "222222" ],
+  "email" : "maria@maria",
+  "ativo" : true
+}, {
+  "id" : 23,
+  "cpf" : "17752603481",
+  "nome" : "Paulo",
+  "endereco" : "Rua Paulo",
+  "telefones" : [ "333333" ],
+  "email" : "paulo@paulo",
+  "ativo" : true
+}, {
+  "id" : 4,
+  "cpf" : "48180125050",
+  "nome" : "Jorge",
+  "endereco" : "Rua J",
+  "telefones" : [ "67899" ],
+  "email" : "jorge@jorge",
+  "ativo" : true
+}, {
+  "id" : 27,
+  "cpf" : "02519094095",
+  "nome" : "Pedro",
+  "endereco" : "Rua P",
+  "telefones" : [ "55555" ],
+  "email" : "pedro@pedro.com",
+  "ativo" : true
+} ]
