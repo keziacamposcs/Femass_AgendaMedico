@@ -1,7 +1,7 @@
 package br.edu.femass.model;
 import java.util.Set;
 
-public class PlanoDeSaude {
+public class Plano {
     private Long id;
     private String plano;
 
@@ -9,10 +9,10 @@ public class PlanoDeSaude {
 
     private static Long ultimoCodigo = 0L;
 
-    public PlanoDeSaude() {
+    public Plano() {
     }
     
-    public PlanoDeSaude( String plano) {
+    public Plano( String plano) {
         this.plano = plano;
         this.ativo = true;
         
@@ -24,7 +24,7 @@ public class PlanoDeSaude {
         return id;
     }
 
-    public String getPlanoDeSaude() {
+    public String getPlano() {
         return plano;
     }
     
@@ -41,8 +41,9 @@ public class PlanoDeSaude {
         return this.plano;
     }
 
-    public static void atualizarUltimoId(Set<PlanoDeSaude> planos) {
-        for (PlanoDeSaude plano: planos) {
+
+    public static void atualizarUltimoId(Set<Plano> planos) {
+        for (Plano plano: planos) {
             if (plano.getId().longValue()>ultimoCodigo) {
                 ultimoCodigo = plano.getId();
             }

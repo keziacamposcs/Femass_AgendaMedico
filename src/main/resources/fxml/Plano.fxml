@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.PlanoDeSaudeController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.PlanoController">
    <center>
       <Pane prefHeight="408.0" prefWidth="619.0" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="listaPlanoDeSaude" layoutX="14.0" layoutY="21.0" onKeyPressed="#listaPlanoDeSaude_keyPressed" onMouseClicked="#listaPlanoDeSaude_mouseClicked" prefHeight="314.0" prefWidth="231.0" />
+            <ListView fx:id="listaPlano" layoutX="14.0" layoutY="21.0" onKeyPressed="#listaPlano_keyPressed" onMouseClicked="#listaPlano_mouseClicked" prefHeight="314.0" prefWidth="231.0" />
             <Button layoutX="190.0" layoutY="348.0" mnemonicParsing="false" onAction="#BtnExcluir_Click" text="Excluir" />
             <GridPane layoutX="260.0" layoutY="39.0" prefHeight="206.0" prefWidth="288.0">
               <columnConstraints>
@@ -34,8 +34,8 @@
                   <Label text="ID" />
                   <TextField fx:id="TxtId" prefHeight="25.0" prefWidth="163.0" GridPane.columnIndex="1" />
                   
-                  <Label text="PlanoDeSaude" GridPane.rowIndex="1" />
-                  <TextField fx:id="TxtPlanoDeSaude" prefHeight="25.0" prefWidth="141.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                  <Label text="Plano de Saúde" GridPane.rowIndex="1" />
+                  <TextField fx:id="TxtPlano" prefHeight="25.0" prefWidth="141.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
 
                 </children>
             </GridPane>

@@ -3,10 +3,11 @@ package br.edu.femass.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import br.edu.femass.dao.PlanoDeSaudeDao;
+import br.edu.femass.dao.PlanoDao;
 
 import br.edu.femass.diversos.DiversosJavaFx;
-import br.edu.femass.model.PlanoDeSaude;
+import br.edu.femass.model.Plano;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,69 +18,66 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
-public class PlanoDeSaudeController implements Initializable {
+public class PlanoController implements Initializable {
 
     @FXML
     private TextField TxtId;
 
     @FXML
-    private TextField TxtPlanoDeSaude;
+    private TextField TxtPlano;
 
     @FXML
-    private ListView<PlanoDeSaude> listaPlanoDeSaude;
+    private ListView<Plano> listaPlano;
 
-    private PlanoDeSaudeDao planoDeSaudeDao = new PlanoDeSaudeDao();
+    private PlanoDao planoDao = new PlanoDao();
 
 
     @FXML 
-    private void listaPlanoDeSaude_keyPressed(KeyEvent event) {
+    private void listaPlano_keyPressed(KeyEvent event) {
         exibirDados();
     }
 
     @FXML 
-    private void listaPlanoDeSaude_mouseClicked(MouseEvent event) {
+    private void listaPlano_mouseClicked(MouseEvent event) {
         exibirDados();
     }
 
     private void exibirDados() {
-        PlanoDeSaude plano = listaPlanoDeSaude.getSelectionModel().getSelectedItem();
+        Plano plano = listaPlano.getSelectionModel().getSelectedItem();
         if (plano==null) return;
 
-        TxtPlanoDeSaude.setText(plano.getPlanoDeSaude());
+        TxtPlano.setText(plano.getPlano());
         TxtId.setText(plano.getId().toString());
     }
 
     @FXML
     private void BtnExcluir_Click(ActionEvent event) {
-        PlanoDeSaude plano = listaPlanoDeSaude.getSelectionModel().getSelectedItem();
+        Plano plano = listaPlano.getSelectionModel().getSelectedItem();
         if (plano==null) return;
 
         try {
-            if (planoDeSaudeDao.excluir(plano)==false) {
+            if (planoDao.excluir(plano)==false) {
                 DiversosJavaFx.exibirMensagem("Não foi possível excluir a especialidade selecionado");
             }
             exibirPlano();
         } catch (Exception e) {
             e.printStackTrace();
         }
-       
-
     }
 
     @FXML
     private void BtnGravar_Click(ActionEvent event) {
         try {
-            PlanoDeSaude plano = new PlanoDeSaude(TxtPlanoDeSaude.getText());
+            Plano plano = new Plano(TxtPlano.getText());
             TxtId.setText(plano.getId().toString());
 
-            if (planoDeSaudeDao.gravar(plano)==false) {
+            if (planoDao.gravar(plano)==false) {
                 DiversosJavaFx.exibirMensagem("Não foi possível gravar o especialidade");
                 return;
             }
 
             TxtId.setText("");
-            TxtPlanoDeSaude.setText("");
-
+            TxtPlano.setText("");
 
             exibirPlano();   
         } catch (Exception e) {
@@ -90,10 +88,10 @@ public class PlanoDeSaudeController implements Initializable {
 
     public void exibirPlano() {
         try {
-        ObservableList<PlanoDeSaude> data = FXCollections.observableArrayList(
-            planoDeSaudeDao.buscarAtivos()
+        ObservableList<Plano> data = FXCollections.observableArrayList(
+            planoDao.buscarAtivos()
         );
-        listaPlanoDeSaude.setItems(data);
+        listaPlano.setItems(data);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

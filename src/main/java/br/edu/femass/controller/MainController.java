@@ -67,7 +67,7 @@ public class MainController implements Initializable {
     @FXML
     private void plano_onAction(ActionEvent event) {
         try {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/PlanoDeSaude.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Plano.fxml"));
         
         Scene scene = new Scene(root);
         Stage stage = new Stage();
