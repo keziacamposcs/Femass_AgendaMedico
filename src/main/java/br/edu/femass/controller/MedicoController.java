@@ -55,7 +55,7 @@ public class MedicoController implements Initializable {
         TxtCrm.setText(medico.getCrm());
         TxtNome.setText(medico.getNome());
 
-        CboEspecialidade.getSelectionModel().select(medico.getEsp());
+        CboEspecialidade.getSelectionModel().select(medico.getEspecialidade());
     }
 
     @FXML
@@ -67,12 +67,10 @@ public class MedicoController implements Initializable {
             if (medicoDao.excluir(medico)==false) {
                 DiversosJavaFx.exibirMensagem("Não foi possível excluir a conta selecionado");
             }
-        exibirMedicos();
+            exibirMedicos();
         } catch (Exception e) {
             e.printStackTrace();
         }
-       
-
     }
 
     @FXML
@@ -81,7 +79,6 @@ public class MedicoController implements Initializable {
             Medico medico = new Medico(
                     TxtCrm.getText(),
                     TxtNome.getText(),
-
                     CboEspecialidade.getSelectionModel().getSelectedItem());
 
             if (medicoDao.gravar(medico)==false) {
@@ -91,7 +88,6 @@ public class MedicoController implements Initializable {
 
             TxtCrm.setText("null");
             TxtNome.setText("null");
-
             CboEspecialidade.getSelectionModel().select(null);
 
 
@@ -111,6 +107,7 @@ public class MedicoController implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        
     }
 
     public void exibirEspecialidades() {

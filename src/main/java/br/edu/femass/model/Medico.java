@@ -13,6 +13,7 @@ public class Medico {
         this.crm = crm;
         this.nome = nome;
         this.especialidade = especialidade;
+
         this.ativo = true;
     }
 
@@ -24,7 +25,7 @@ public class Medico {
         return nome;
     }
 
-    public Especialidade getEsp() {
+    public Especialidade getEspecialidade() {
         return especialidade;
     }
 
@@ -38,7 +39,8 @@ public class Medico {
 
     @Override
     public String toString() {
-        return "crm= " + crm + "nome="+ nome + ", especialidade= " + especialidade.getEspecialidade() ;
+        return "crm= " + crm + " , nome= " + nome +  " , especialidade= " + especialidade.getEspecialidade() ;
     }
+    
     
 }

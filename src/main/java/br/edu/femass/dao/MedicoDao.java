@@ -58,7 +58,6 @@ public class MedicoDao extends Persist implements Dao<Medico>{
                 .filter(medico -> medico.getAtivo().equals(true))
                 .collect(Collectors.toList());
 
-        return medicosAtivas;
-    }
+        return medicosAtivas;    }
     
 }

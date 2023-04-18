@@ -37,6 +37,7 @@
                <children>
                   <Label text="CRM" />
                   <TextField fx:id="TxtCrm" prefHeight="25.0" prefWidth="163.0" GridPane.columnIndex="1" />
+                  
                   <Label text="Nome" GridPane.rowIndex="1" />
                   <TextField fx:id="TxtNome" prefHeight="25.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
