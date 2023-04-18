@@ -1,6 +1,10 @@
 [ {
-  "cpf" : "17048908700",
+  "cpf" : "21915716039",
   "nome" : "kezia",
-  "plano" : null,
+  "plano" : {
+    "id" : 1,
+    "plano" : "unimed",
+    "ativo" : true
+  },
   "ativo" : true
 } ]
