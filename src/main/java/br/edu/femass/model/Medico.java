@@ -41,6 +41,4 @@ public class Medico {
     public String toString() {
         return "crm= " + crm + " , nome= " + nome +  " , especialidade= " + especialidade.getEspecialidade() ;
     }
-    
-    
 }
