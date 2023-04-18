@@ -29,11 +29,12 @@
                      <children>
                         <Button fx:id="btnPaciente" onAction="#paciente_onAction" prefHeight="25.0" prefWidth="112.0" text="Paciente" GridPane.rowIndex="1" />
                         <Button fx:id="btnMedico" onAction="#medico_onAction" prefHeight="25.0" prefWidth="112.0" text="Médico" />
-                        <Button fx:id="button" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="85.0" text="Clientes" GridPane.rowIndex="2" />
+                        <Button fx:id="button" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="85.0" text="Clientes" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                           <Label fx:id="label" minHeight="16" minWidth="69" prefHeight="17.0" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Button fx:id="btnPlano" onAction="#plano_onAction" prefHeight="27.0" prefWidth="155.0" text="Plano De Saúde" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Button fx:id="btnEspecialidade" onAction="#especialidade_onAction" prefHeight="27.0" prefWidth="158.0" text="Especialidade" GridPane.columnIndex="1" />
                         <Button fx:id="btnConta" onAction="#handleBtnContaAction" prefHeight="25.0" prefWidth="112.0" text="Conta Corrente" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button fx:id="btnAgenda" onAction="#agenda_onAction" prefHeight="25.0" prefWidth="112.0" text="Agendamento" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>

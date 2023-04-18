@@ -111,6 +111,22 @@ public class MainController implements Initializable {
             ex.printStackTrace();
         }
     }
+
+    @FXML
+    private void agenda_onAction(ActionEvent event) {
+        try {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Agenda.fxml"));
+        
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+
+        stage.setTitle("Agenda");
+        stage.setScene(scene);
+        stage.show();
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
