@@ -17,7 +17,7 @@ public class EntryPoint extends Application {
         scene.getStylesheets().add("/styles/Styles.css");
         scene.getRoot().setStyle("-fx-font-family: 'serif'");
 
-        stage.setTitle("Sistema bancário");
+        stage.setTitle("Agendamento de Consultas");
         stage.setScene(scene);
         stage.show();
     }
