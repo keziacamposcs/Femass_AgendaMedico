@@ -7,4 +7,13 @@
     "ativo" : true
   },
   "ativo" : true
+}, {
+  "crm" : "234",
+  "nome" : "Ana",
+  "especialidade" : {
+    "id" : 1,
+    "especialidade" : "cardio",
+    "ativo" : true
+  },
+  "ativo" : true
 } ]

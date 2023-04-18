@@ -61,8 +61,6 @@ public class EspecialidadeController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-       
-
     }
 
     @FXML
