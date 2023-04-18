@@ -7,4 +7,13 @@
     "ativo" : true
   },
   "ativo" : true
+}, {
+  "cpf" : "17048908700",
+  "nome" : "keke",
+  "plano" : {
+    "id" : 3,
+    "plano" : "sulamerica",
+    "ativo" : true
+  },
+  "ativo" : false
 } ]

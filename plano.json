@@ -1,5 +1,13 @@
 [ {
   "id" : 1,
   "plano" : "unimed",
+  "ativo" : false
+}, {
+  "id" : 3,
+  "plano" : "sulamerica",
+  "ativo" : true
+}, {
+  "id" : 2,
+  "plano" : "amil",
   "ativo" : true
 } ]

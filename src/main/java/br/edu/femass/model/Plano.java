@@ -49,5 +49,28 @@ public class Plano {
             }
         }
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) //verifica se é o mesmo objeto
+            return true;
+        if (obj == null) //verifica se é nulo
+            return false;
+        if (getClass() != obj.getClass()) //verifica se é do mesmo tipo
+            return false;
+        Plano other = (Plano) obj; //converte o objeto para Plano
+        if (id == null) { //verifica se o id é nulo
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id)) //compara os ids
+            return false;
+        if (plano == null) { //verifica se o plano é nulo
+            if (other.plano != null)
+                return false;
+        } else if (!plano.equals(other.plano)) //compara os planos
+            return false;
+        return true;
+    }
+    
     
 }

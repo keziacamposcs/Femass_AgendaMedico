@@ -1,5 +1,5 @@
 [ {
-  "data" : "2022-02-01",
+  "data" : "13",
   "medico" : {
     "crm" : "1",
     "nome" : "jose",
@@ -20,9 +20,9 @@
     },
     "ativo" : true
   },
-  "ativo" : true
+  "ativo" : false
 }, {
-  "data" : "13",
+  "data" : "2022-02-01",
   "medico" : {
     "crm" : "1",
     "nome" : "jose",
