@@ -18,7 +18,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -39,14 +42,26 @@ public class PacienteController implements Initializable {
     private Dao<Plano> planoDao = new PlanoDao();
     private Dao<Paciente> pacienteDao = new PacienteDao();
 
+    @FXML
+    private TableView<Paciente> TablePaciente;
+
+    @FXML
+    private TableColumn<Paciente, Integer> col_cpf;
+
+    @FXML
+    private TableColumn<Paciente, String> col_nome;
+
+    @FXML
+    private TableColumn<Paciente, String> col_plano;
+
 
     @FXML 
-    private void listaPaciente_keyPressed(KeyEvent event) {
+    private void On_Key_Pressed_TablePaciente(KeyEvent event) {
         exibirDados();
     }
 
     @FXML 
-    private void listaPaciente_mouseClicked(MouseEvent event) {
+    private void On_Mouse_Clicked_TablePaciente(MouseEvent event) {
         exibirDados();
     }
 
@@ -62,7 +77,7 @@ public class PacienteController implements Initializable {
 
     @FXML
     private void BtnExcluir_Click(ActionEvent event) {
-        Paciente paciente = listaPaciente.getSelectionModel().getSelectedItem();
+        Paciente paciente = TablePaciente.getSelectionModel().getSelectedItem();
         if (paciente==null) return;
 
         try {
@@ -96,7 +111,7 @@ public class PacienteController implements Initializable {
             DiversosJavaFx.exibirMensagem(e.getMessage());
         }
     }
-
+/*
     public void exibirPacientes() {
         try {
         ObservableList<Paciente> data = FXCollections.observableArrayList(
@@ -108,6 +123,20 @@ public class PacienteController implements Initializable {
         }
         
     }
+*/
+    public void exibirPacientes() {
+        try{
+            ObservableList<Paciente> data = FXCollections.observableArrayList(
+                pacienteDao.buscarAtivos()
+            );
+            TablePaciente.setItems(data);
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
 
     public void exibirPlano() {
         try {
@@ -124,6 +153,10 @@ public class PacienteController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         exibirPacientes();
         exibirPlano();
+
+        col_cpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        col_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        col_plano.setCellValueFactory(new PropertyValueFactory<>("plano"));
     }
 
 }
