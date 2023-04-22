@@ -61,7 +61,7 @@ public class EspecialidadeController implements Initializable {
 
     @FXML
     private void BtnExcluir_Click(ActionEvent event) {
-        Especialidade especialidade = listaEspecialidade.getSelectionModel().getSelectedItem();
+        Especialidade especialidade = TableEspecialidade.getSelectionModel().getSelectedItem();
         if (especialidade==null) return;
 
         try {
