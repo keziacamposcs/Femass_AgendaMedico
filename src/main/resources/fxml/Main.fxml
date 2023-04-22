@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -12,9 +14,9 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.controller.MainController">
    <center>
-      <HBox prefHeight="352.0" prefWidth="602.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="352.0" prefWidth="602.0" style="-fx-background-color: EDF6F9;" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="312.0" prefWidth="549.0">
+            <Pane prefHeight="312.0" prefWidth="549.0" style="-fx-background-color: #EDF6F9;">
                <children>
                   <GridPane layoutX="11.0" layoutY="184.0" prefHeight="124.0" prefWidth="535.0">
                     <columnConstraints>
@@ -26,14 +28,39 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnPaciente" onAction="#paciente_onAction" prefHeight="27.0" prefWidth="149.0" text="Registro de Pacientes" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Button fx:id="btnMedico" onAction="#medico_onAction" prefHeight="27.0" prefWidth="146.0" text="Registro de Médicos" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                        <Button fx:id="btnPaciente" onAction="#paciente_onAction" prefHeight="27.0" prefWidth="149.0" style="-fx-background-color: #006D77;" text="Registro de Pacientes" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Avenir Roman" size="13.0" />
+                           </font></Button>
+                        <Button fx:id="btnMedico" onAction="#medico_onAction" prefHeight="27.0" prefWidth="146.0" style="-fx-background-color: #006D77;" text="Registro de Médicos" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font name="Avenir Roman" size="13.0" />
+                           </font></Button>
                           <Label fx:id="label" minHeight="16" minWidth="69" prefHeight="17.0" prefWidth="192.0" GridPane.columnIndex="1" />
-                        <Button fx:id="btnPlano" onAction="#plano_onAction" prefHeight="27.0" prefWidth="185.0" text="Registro de Planos de Saúde" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <Button fx:id="btnEspecialidade" onAction="#especialidade_onAction" prefHeight="27.0" prefWidth="185.0" text="Registro de Especialidades" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Button fx:id="btnPlano" onAction="#plano_onAction" prefHeight="27.0" prefWidth="185.0" style="-fx-background-color: #006D77;" text="Registro de Planos de Saúde" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Avenir Roman" size="13.0" />
+                           </font></Button>
+                        <Button fx:id="btnEspecialidade" onAction="#especialidade_onAction" prefHeight="27.0" prefWidth="185.0" style="-fx-background-color: #006D77;" text="Registro de Especialidades" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                           <font>
+                              <Font name="Avenir Roman" size="13.0" />
+                           </font></Button>
                      </children>
                   </GridPane>
-                  <Button fx:id="btnAgenda" layoutX="185.0" layoutY="129.0" onAction="#agenda_onAction" prefHeight="27.0" prefWidth="180.0" text="Registros de Agendamentos" />
+                  <Button fx:id="btnAgenda" layoutX="167.0" layoutY="129.0" onAction="#agenda_onAction" prefHeight="27.0" prefWidth="216.0" style="-fx-background-color: #006D77;" text="Registros de Agendamentos" textFill="WHITE">
+                     <font>
+                        <Font name="Avenir Roman" size="13.0" />
+                     </font></Button>
+                  <ImageView fitHeight="50.0" fitWidth="51.0" layoutX="249.0" smooth="false">
+                     <image>
+                        <Image url="@../image/icone.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#e29578" layoutX="94.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema de Agendamento Médico">
+                     <font>
+                        <Font name="Avenir Roman" size="24.0" />
+                     </font>
+                  </Text>
                </children>
             </Pane>
 
