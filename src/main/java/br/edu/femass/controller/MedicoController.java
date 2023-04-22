@@ -100,8 +100,8 @@ public class MedicoController implements Initializable {
     private void BtnGravar_Click(ActionEvent event) {
     try {
         List<Especialidade> especialidades = new ArrayList<>();
+        
         // Adiciona a primeira especialidade selecionada
-
         Especialidade especialidadeSelecionada = CboEspecialidade.getSelectionModel().getSelectedItem();
         if (especialidadeSelecionada != null) {
             especialidades.add(especialidadeSelecionada);

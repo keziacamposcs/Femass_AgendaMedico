@@ -21,7 +21,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -37,6 +40,18 @@ public class AgendaController implements Initializable {
     private ComboBox<Paciente> CboPaciente;
 
     @FXML
+    private TableView<Agenda> TableAgenda;
+
+    @FXML
+    private TableColumn<Agenda, String> col_data;
+
+    @FXML
+    private TableColumn<Agenda, String> col_medico;
+
+    @FXML
+    private TableColumn<Agenda, String> col_paciente;
+
+    @FXML
     private ListView<Agenda> listaAgenda;
 
     private Dao<Paciente> pacienteDao = new PacienteDao();
@@ -45,12 +60,12 @@ public class AgendaController implements Initializable {
 
 
     @FXML 
-    private void listaAgenda_keyPressed(KeyEvent event) {
+    private void On_Key_Pressed_TableAgenda(KeyEvent event) {
         exibirDados();
     }
 
     @FXML 
-    private void listaAgenda_mouseClicked(MouseEvent event) {
+    private void On_Mouse_Clicked_TableAgenda(MouseEvent event) {
         exibirDados();
     }
 
@@ -66,7 +81,7 @@ public class AgendaController implements Initializable {
 
     @FXML
     private void BtnExcluir_Click(ActionEvent event) {
-        Agenda agenda = listaAgenda.getSelectionModel().getSelectedItem();
+        Agenda agenda = TableAgenda.getSelectionModel().getSelectedItem();
         if (agenda==null) return;
 
         try {
@@ -102,7 +117,7 @@ public class AgendaController implements Initializable {
         }
 
     }
-
+/*
     public void exibirAgendas() {
         try {
         ObservableList<Agenda> data = FXCollections.observableArrayList(
@@ -113,6 +128,17 @@ public class AgendaController implements Initializable {
             ex.printStackTrace();
         }
         
+    }
+*/
+    public void exibirAgendas() {
+        try {
+            ObservableList<Agenda> data = FXCollections.observableArrayList(
+                agendaDao.buscarAtivos()
+            );
+            TableAgenda.setItems(data);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }        
     }
 
     public void exibirMedicos() {
@@ -142,6 +168,10 @@ public class AgendaController implements Initializable {
         exibirAgendas();
         exibirMedicos();
         exibirPacientes();
+
+        col_data.setCellValueFactory(new PropertyValueFactory<>("data"));
+        col_medico.setCellValueFactory(new PropertyValueFactory<>("medico"));
+        col_paciente.setCellValueFactory(new PropertyValueFactory<>("paciente"));
     }
 
 }
