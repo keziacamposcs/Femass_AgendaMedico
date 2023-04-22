@@ -12,7 +12,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
@@ -29,14 +32,22 @@ public class EspecialidadeController implements Initializable {
 
     private EspecialidadeDao especialidadeDao = new EspecialidadeDao();
 
+    @FXML
+    private TableView<Especialidade> TableEspecialidade;
+
+    @FXML
+    private TableColumn<Especialidade, Integer> col_id;
+
+    @FXML
+    private TableColumn<Especialidade, String> col_especialidade;
 
     @FXML 
-    private void listaEspecialidade_keyPressed(KeyEvent event) {
+    private void On_Key_Pressed_TableEspecialidade(KeyEvent event) {
         exibirDados();
     }
 
     @FXML 
-    private void listaEspecialidade_mouseClicked(MouseEvent event) {
+    private void On_Mouse_Clicked_TableEspecialidade(MouseEvent event) {
         exibirDados();
     }
 
@@ -84,7 +95,7 @@ public class EspecialidadeController implements Initializable {
         }
 
     }
-
+/*
     public void exibirEspecialidade() {
         try {
         ObservableList<Especialidade> data = FXCollections.observableArrayList(
@@ -96,10 +107,27 @@ public class EspecialidadeController implements Initializable {
         }
         
     }
+*/
 
+    public void exibirEspecialidade() {
+        try{
+            ObservableList<Especialidade> data = FXCollections.observableArrayList(
+                especialidadeDao.buscarAtivos()
+            );
+            TableEspecialidade.setItems(data);
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         exibirEspecialidade();
+        col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        col_especialidade.setCellValueFactory(new PropertyValueFactory<>("especialidade"));
     }
 
 }
