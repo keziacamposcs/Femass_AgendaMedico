@@ -1,19 +1,19 @@
 [ {
-  "crm" : "234",
-  "nome" : "Ana",
-  "especialidade" : {
+  "crm" : "1",
+  "nome" : "jose",
+  "especialidades" : [ {
     "id" : 1,
     "especialidade" : "cardio",
     "ativo" : true
-  },
-  "ativo" : false
+  } ],
+  "ativo" : true
 }, {
   "crm" : "1",
   "nome" : "jose",
-  "especialidade" : {
+  "especialidades" : [ {
     "id" : 1,
     "especialidade" : "cardio",
     "ativo" : true
-  },
+  } ],
   "ativo" : true
 } ]

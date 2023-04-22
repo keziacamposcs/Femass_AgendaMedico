@@ -1,9 +1,9 @@
 [ {
   "id" : 1,
   "especialidade" : "cardio",
-  "ativo" : false
+  "ativo" : true
 }, {
   "id" : 2,
   "especialidade" : "nutri",
-  "ativo" : false
+  "ativo" : true
 } ]
