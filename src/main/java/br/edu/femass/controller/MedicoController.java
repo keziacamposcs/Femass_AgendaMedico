@@ -52,9 +52,6 @@ public class MedicoController implements Initializable {
     private TableColumn<Medico, String> col_esp;
 
     @FXML
-    private TableColumn<Medico, String> col_esp1;
-
-    @FXML
     private ListView<Medico> listaMedico;
 
     private Dao<Especialidade> especialidadeDao = new EspecialidadeDao();
@@ -100,12 +97,19 @@ public class MedicoController implements Initializable {
     }
 
     @FXML
-private void BtnGravar_Click(ActionEvent event) {
+    private void BtnGravar_Click(ActionEvent event) {
     try {
         List<Especialidade> especialidades = new ArrayList<>();
+        // Adiciona a primeira especialidade selecionada
+
         Especialidade especialidadeSelecionada = CboEspecialidade.getSelectionModel().getSelectedItem();
         if (especialidadeSelecionada != null) {
             especialidades.add(especialidadeSelecionada);
+        }
+        // Adiciona a segunda especialidade selecionada
+        Especialidade especialidadeSelecionada2 = CboEspecialidade1.getSelectionModel().getSelectedItem();
+        if (especialidadeSelecionada2 != null) {
+            especialidades.add(especialidadeSelecionada2);
         }
 
         Medico medico = new Medico(
@@ -117,17 +121,15 @@ private void BtnGravar_Click(ActionEvent event) {
             DiversosJavaFx.exibirMensagem("Não foi possível gravar a conta corrente");
             return;
         }
-
         TxtCrm.setText("null");
         TxtNome.setText("null");
         CboEspecialidade.getSelectionModel().select(null);
         CboEspecialidade1.getSelectionModel().select(null);
-
         exibirMedicos();
-    } catch (Exception e) {
-        DiversosJavaFx.exibirMensagem(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-}
 
 /*
     public void exibirMedicos() {
@@ -183,12 +185,11 @@ private void BtnGravar_Click(ActionEvent event) {
     public void initialize(URL location, ResourceBundle resources) {
         exibirMedicos();
         exibirEspecialidades();
+        exibirEspecialidades1();
 
         col_crm.setCellValueFactory(new PropertyValueFactory<>("crm"));
         col_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         col_esp.setCellValueFactory(new PropertyValueFactory<>("especialidades"));
-        col_esp1.setCellValueFactory(new PropertyValueFactory<>("especialidades"));
-
 
     }
 
